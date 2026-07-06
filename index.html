@@ -76,12 +76,8 @@ const colors = [
     "green",
     "blue",
     "indigo",
-    "violet",
-     "indigo",
-      "blue",
-      "green",
-       "yellow",
-       "orange"
+    "violet"
+    
 ];
 
 // ======================================
@@ -325,8 +321,8 @@ function loop(timestamp){
 
 
 const minInterval = 30.30303030;
-//const maxInterval = 969.69696969;
-const maxInterval = 1939.393939;
+const maxInterval = 969.69696969;
+
 const equivalentInterval =
     maxInterval -
     speed *
@@ -389,7 +385,7 @@ document.addEventListener(
 window.addEventListener(
     "load",
     ()=>{
-
+keepScreenAwake();
       
 
 createTopItem();
