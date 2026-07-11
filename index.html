@@ -70,8 +70,14 @@ body{
 // ======================================
 // DATA
 // ======================================
-
 const numbers = ["Le Paradis","L'Infini","L'Univers","L'Origine","La Vie Est Belle","La Vie Est Magnifique","Le Monde Est Merveilleux","La Découverte","Tout Va Bien","La Gratitude","La Positivité","La Légèreté","Super","L'Abondance","La Jeunesse Éternelle","Génial","La Beauté","La sensualité","La volonté","L'Authenticité","La Sincérité","L'Éternité","La Fontaine De Jouvence","La pleine forme","La Pêche","La Vitalité","La Force","La Bonne Santé","L'Énergie","L'Amour","La Paix","La Liberté","Le Bien-être","La Joie","L'Aisance","Le Confort","L'Agapè","Le Bonheur","Florès","L'Épanouissement","L'Harmonie","Merci","Namasté"];
+
+
+
+
+
+
+
 
 
 
@@ -108,41 +114,64 @@ let phase = 0;
 let lastMove = 0;
 
 let colorIndex = 0;
+let previousDirection = 1;
 
 // ======================================
 // CREATE ITEM
 // ======================================
+function nextIndex(i){
 
+    return (
+        i + 1
+    ) % numbers.length;
+}
+
+function prevIndex(i){
+
+    return (
+        i - 1 +
+        numbers.length
+    ) % numbers.length;
+}
 function createTopItem(){
+
+    let newIndex;
+
+    if(
+        sphereItems.length === 0
+    ){
+        newIndex = 0;
+    }
+    else{
+
+        newIndex =
+            nextIndex(
+                sphereItems[0].index
+            );
+    }
 
     sphereItems.unshift({
 
+        index:
+            newIndex,
+
         value:
             String(
-                numbers[dataIndex]
+                numbers[newIndex]
             ),
 
-      
-color:
-    colors[colorIndex],
-
+        color:
+            colors[colorIndex],
 
         level : 0
 
     });
 
-    dataIndex =
-        (dataIndex + 1)
+    colorIndex =
+        (colorIndex + 1)
         %
-        numbers.length;
-
-colorIndex =
-    (colorIndex + 1)
-    %
-    colors.length;
-
+        colors.length;
 }
-
 // ======================================
 // DRAW
 // ======================================
@@ -150,7 +179,12 @@ colorIndex =
 
 
 function drawSphere(){
-
+console.log(
+    sphereItems[0]?.index,
+    sphereItems[
+        sphereItems.length - 1
+    ]?.index
+);
     const sphere =
         document.getElementById(
             "sphere"
@@ -178,7 +212,7 @@ function drawSphere(){
             item.color;
 
       
-const lineHeight = 28;
+const lineHeight = 20;
 
 const y =
      -10 +
@@ -210,10 +244,10 @@ const y =
 
             );
 
-        div.style.fontSize =
-            fontSize + "px";
-
-        sphere.appendChild(div);
+       div.style.fontSize = "18px";
+ //div.style.fontSize =
+            //fontSize + "px";
+       sphere.appendChild(div);
 
     });
 }
@@ -271,30 +305,34 @@ colorIndex =
     colors.length;
 
 
-dataIndex =
-    (
-        dataIndex - 1 +
-        numbers.length
-    )
-    %
-    numbers.length;
+const newIndex =
 
-        sphereItems.push({
+    sphereItems.length === 0
+    ? 0
+    : prevIndex(
+        sphereItems[
+            sphereItems.length - 1
+        ].index
+    );
 
-            value:
-                String(
-                    numbers[dataIndex]
-                ),
+sphereItems.push({
 
-           
-color:
-    colors[colorIndex],
+    index:
+        newIndex,
 
+    value:
+        String(
+            numbers[newIndex]
+        ),
 
-            level:
-                levelCount - 1
+    color:
+        colors[colorIndex],
 
-        });
+    level:
+        levelCount - 1
+
+});
+
     }
 }
 
@@ -304,11 +342,12 @@ color:
 
 function loop(timestamp){
 
-    const cycleDuration = 124.121212121;
+ 
+const cycleDuration = 124.1212121;
 
     phase +=
-        (1.939393939*Math.PI)
-        /
+      (1.939393939*Math.PI)
+             /
         (cycleDuration * 60);
 
     const wave =
@@ -320,21 +359,42 @@ function loop(timestamp){
         wave >= 0
         ? 1
         : -1;
+if(
+    direction > 0 &&
+    previousDirection < 0
+){
 
-    const speed =
+   const bottomItem =
+    sphereItems[
+        sphereItems.length - 1
+    ];
+
+
+
+    const visibleIndex =
+        numbers.indexOf(
+            bottomItem.value
+        );
+
+    if(visibleIndex >= 0){
+
+        
+    }
+}
+
+previousDirection = direction;
+
+ const speed =
         Math.abs(
             wave
         );
-
-    
-
-    
-        
-
+           
 
 
 const minInterval = 60.60606060;
 const maxInterval = 1939.393939;
+//const minInterval = 127.71392;
+//const maxInterval = 2043.4227330;
 
 
 const equivalentInterval =
