@@ -220,21 +220,20 @@ const y =
             String(
                 item.value
             ).length;
+      const phi = 1.939393;
+       const fontSize =
+    Math.max(
+        66,
+        66 /
+        Math.pow(
+            phi,
+            length / 8
+        )
+    );
 
-        const fontSize =
-            Math.max(
-              
-           
-
-  18,
-        36 - length * 0.5
-
-
-            );
-
-     //  div.style.fontSize = "16px";
- div.style.fontSize =
-            fontSize + "px";
+       div.style.fontSize = "33px";
+// div.style.fontSize =
+     //       fontSize + "px";
        sphere.appendChild(div);
 
     });
