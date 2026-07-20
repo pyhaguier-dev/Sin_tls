@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -6,7 +6,7 @@
 content="width=device-width,initial-scale=1">
   
         
-<title>sin TLS</title>
+<title>Sin TLS</title>
 
 <style>
 
@@ -18,7 +18,7 @@ body{
 }
 
 
-   
+
 /* SPHERE */
 
 
@@ -71,7 +71,7 @@ body{
 // DATA
 // ======================================
  const numbers = ["La Divinité","La Grâce","Le Paradis","L'Angélique","Le Paradis","La Vie Est Belle","La Vie Est Magnifique","Le Monde Est Merveilleux","Tout Va Bien","La Positivité","L'Amitié","La Légèreté","Super","L'Abondance","La Jeunesse Éternelle","Génial","La Beauté","La sensualité","L'Authenticité","L'Éternité","La Jouvence","La pleine forme","Le Raffiné","Le Succès","La Pêche","La Vitalité","La Force","La spontanéité","La Bonne Santé","L'Énergie","Le Bien","La Paix","La Liberté","La Jouissance","Le Bien-être","La Vivacité","L'agilité","L'acuité","La Joie","La délectation","Le Plaisir","La Satisfaction","Le Confort","L'Agapè","Le Bonheur","Florès","La Volupté","L'Harmonie","Merci","Namasté"];
-  
+    
   // COLORS
 // ======================================
 
@@ -220,21 +220,20 @@ const y =
             String(
                 item.value
             ).length;
+      const phi = 1.939393;
+       const fontSize =
+    Math.max(
+        66,
+        99 /
+        Math.pow(
+            phi,
+            length / 8
+        )
+    );
 
-        const fontSize =
-            Math.max(
-              
-           
-
-  18,
-        36 - length * 0.5
-
-
-            );
-
-     //  div.style.fontSize = "16px";
- div.style.fontSize =
-            fontSize + "px";
+       div.style.fontSize = "33px";
+// div.style.fontSize =
+     //       fontSize + "px";
        sphere.appendChild(div);
 
     });
