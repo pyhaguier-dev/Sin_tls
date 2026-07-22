@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -6,7 +6,7 @@
 content="width=device-width,initial-scale=1">
   
         
-<title>sin tls</title>
+<title>backup</title>
 
 <style>
 
@@ -51,7 +51,7 @@ body{
     bottom: 2px;
     right: 5px;
     font-size: 4px;
-    color: #aaa;
+    color: white;
     opacity: 0.7;
 
 }
@@ -63,7 +63,7 @@ body{
 
 
 <div id="sphere"></div>
-
+<div id="openTime"></div>
 
 <script>
 
@@ -71,8 +71,8 @@ body{
 // DATA
 // ======================================
 const numbers = ["La Divinité","La Grâce","Le Paradis","L'Angélique","La Création","L'Infini","Le Multivers","La Vie Est Belle","L'Arc-En-Ciel","La Vie Est Magnifique","Le Monde Est Merveilleux","La Découverte","Tout Va Bien","La Positivité","L'Amitié","La Légèreté","L'Abondance","La Jeunesse Éternelle","La Beauté","La sensualité","La Bonté","La Richesse","L'Authenticité","Le Charisme","La Sincérité","L'Éternité","La Jouvence","La Pleine Forme","La Bienveillance","Le Raffiné","La Perfection","La Pêche","La Vitalité","La Spontanéité","L'Optimisme","La Bonne Santé","La Passion","La Réalisation","L'Agréable","La Capacité","Le Bien","La Douceur","L'Amour Universel","La Liberté","La Jouissance","Le Bien-être","La sexualité","La Vivacité","L'agilité","La Lucidité","L'acuité","L'Instinct","La Joie","La Confiance","La Gentillesse","La Qualité","La Dignité","La Spiritualité","La Clairvoyance","La Perspicacité","La Compréhension","Le Plaisir","La Satisfaction","L'Aisance","L'Honnêteté","La Sagesse","L'Agapè","Le Bonheur","Florès","La Volupté","Épanoui","L'Harmonie","Merci","Namasté"];
-
-// COLORS
+  
+  // COLORS
 // ======================================
 
 const colors = [
@@ -200,7 +200,7 @@ console.log(
             item.color;
 
       
-const lineHeight = 36;
+const lineHeight = 33;
 
 const y =
      -10 +
@@ -232,9 +232,9 @@ const y =
 
             );
 
-       div.style.fontSize = "36px";
- //div.style.fontSize =
-     //       fontSize + "px";
+     //  div.style.fontSize = "16px";
+ div.style.fontSize =
+            fontSize + "px";
        sphere.appendChild(div);
 
     });
@@ -379,7 +379,7 @@ previousDirection = direction;
            
 
 
-const minInterval = 90.909090; //   60.606060
+const minInterval = 90.90909; //60.606060
 const maxInterval = 323.232323; // 1939.393939
 
 
@@ -453,9 +453,9 @@ keepScreenAwake();
 
 createTopItem();
 drawSphere();
-//const openedAt = new Date();
-   // document.getElementById("openTime").textContent =
-     //   openedAt.toLocaleString();
+const openedAt = new Date();
+   document.getElementById("openTime").textContent =
+        openedAt.toLocaleString();
         requestAnimationFrame(
             loop
         );
